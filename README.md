@@ -1,0 +1,1 @@
+[![CircleCI](https://circleci.com/gh/RNiesler/services-trainings.svg?style=svg)](https://circleci.com/gh/RNiesler/services-trainings)
