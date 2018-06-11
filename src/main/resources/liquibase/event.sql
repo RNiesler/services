@@ -1,4 +1,6 @@
-create table event_log (
+--liquibase formatted sql
+--changeset event:1
+create table event (
   aggregate_id BINARY(16) NOT NULL,
   aggregate_id_text varchar(36) generated always as
    (insert(

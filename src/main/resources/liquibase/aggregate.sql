@@ -1,3 +1,6 @@
+--liquibase formatted sql
+
+--changeset aggregate:1
 create table aggregate (
   id BINARY(16) NOT NULL,
   id_text varchar(36) generated always as
