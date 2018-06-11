@@ -1,2 +1,3 @@
-#liquibase.change-log=classpath:liquibase-changeLog.xml
-
+spring:
+  liquibase:
+    change-log: classpath:liquibase/root.xml
