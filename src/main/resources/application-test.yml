@@ -6,7 +6,7 @@ spring:
     platform: mysql
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-#    hibernate:
-#      ddl-auto: validate
+    hibernate:
+      ddl-auto: none
     database: mysql
-    show-sql: false
+    show-sql: true
