@@ -36,6 +36,8 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile('org.springframework.boot:spring-boot-starter-data-mongodb')
     testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+    // for Java9
+    compile 'javax.xml.bind:jaxb-api:2.3.0'
 }
 
 jacocoTestReport {
