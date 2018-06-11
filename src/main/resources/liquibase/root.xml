@@ -6,4 +6,5 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
     <include file="liquibase/aggregate.sql"/>
     <include file="liquibase/event.sql"/>
+    <include file="liquibase/uuid-mysql.sql"/>
 </databaseChangeLog>

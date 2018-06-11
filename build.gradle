@@ -30,7 +30,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-jdbc')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.liquibase:liquibase-core')
+    compile('org.liquibase:liquibase-core:3.6.1')
 
     runtime('com.h2database:h2')
     runtime('mysql:mysql-connector-java')
