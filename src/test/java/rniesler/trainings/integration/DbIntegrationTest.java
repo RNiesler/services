@@ -1,4 +1,4 @@
-package rniesler.trainings;
+package rniesler.trainings.integration;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,15 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.junit4.SpringRunner;
-import rniesler.trainings.eventstore.domain.*;
+import rniesler.trainings.eventstore.model.*;
 
-import javax.validation.ConstraintViolationException;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DbTest {
+public class DbIntegrationTest {
     @Autowired
     AggregateRepository aggregateRepository;
 
@@ -39,9 +38,7 @@ public class DbTest {
         newAggregate.setType("A");
         aggregateRepository.save(newAggregate);
         Event newEvent = new Event();
-        EventIdentification id = new EventIdentification();
-        id.setAggregateId(newAggregate.getId());
-        id.setVersion(newAggregate.getVersion() + 1);
+        EventIdentification id = new EventIdentification(newAggregate.getId(), newAggregate.getVersion() + 1);
         newEvent.setId(id);
         newEvent.setType("B");
         eventRepository.save(newEvent);
@@ -50,9 +47,7 @@ public class DbTest {
     @Test
     public void testEventWithWrongAggregateId() {
         Event newEvent = new Event();
-        EventIdentification id = new EventIdentification();
-        id.setAggregateId(UUID.randomUUID());
-        id.setVersion(1);
+        EventIdentification id = new EventIdentification(UUID.randomUUID(), 1);
         newEvent.setId(id);
         newEvent.setType("B");
         try {

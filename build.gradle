@@ -35,11 +35,18 @@ dependencies {
     runtime('com.h2database:h2')
     runtime('mysql:mysql-connector-java')
     compileOnly('org.projectlombok:lombok')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
     compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-    testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
     // for Java9
     compile 'javax.xml.bind:jaxb-api:2.3.0'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+
+
+    testCompileOnly 'junit:junit:4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.1.0'
 }
 
 jacocoTestReport {
